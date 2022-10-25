@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Javascript Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    .photos .w3-round {
+      height: 280px;
+      object-fit: contain;
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+          onclick="navigate()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#welcome" class="w3-bar-item w3-button w3-padding-large w3-hide-small">WELCOME</a>
+        <a href="#todo" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TODO</a>
+        <a href="#what-next" class="w3-bar-item w3-button w3-padding-large w3-hide-small">WHATS NEXT</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#photos" class="w3-bar-item w3-button">PHOTOS</a>
+            <a href="#video" class="w3-bar-item w3-button">VIDEO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top: 46px">
+      <a href="#welcome" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">WELCOME</a>
+      <a href="#todo" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">TODO</a>
+      <a href="#what-next" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">WHATS NEXT</a>
+      <a href="#photos" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">PHOTOS</a>
+      <a href="#video" class="w3-bar-item w3-button w3-padding-large" onclick="navigate()">VIDEO</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width: 2000px; margin-top: 46px">
+      <!-- The Welcome Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px" id="welcome">
+        <h2 class="w3-wide">WELCOME</h2>
+        <p class="w3-opacity"><i>Some things are broken!</i></p>
+        <p class="w3-justify">
+          This is a fictional website. I have intentionally not implemented and broken some of the functionality. See the
+          <a href="#todo">TODO</a> section for details on what needs to be fixed. For the purposes of this test, please only use Google
+          Chrome - this has not been tested in other browsers and we do not expect you to fix issues that appear in them.
+        </p>
+
+        <p class="w3-justify">
+          This test should take you less than an hour. It is not designed to be difficult, so don't overthink it. The aim of it is to
+          establish a baseline of candidate skill. If it is taking longer than an hour, send us where you got up to and an explanation of
+          the issues you were facing.
+        </p>
+
+        <p class="w3-justify">See <a href="#what-next">WHAT NEXT</a> for information on how to send it in</p>
+      </div>
+
+      <!-- The TODO Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px" id="todo">
+        <h2 class="w3-wide">TODO</h2>
+
+        <p class="w3-opacity"><i>Vanishing Photos</i></p>
+        <p class="w3-justify">
+          In the PHOTOS section the bottom of this page, some strange behaviour is happening, there should be 4 photos on a loop, but after
+          the fourth, the content of that whole section vanishes for a few seconds before it goes back around - This shouldn't happen!
+        </p>
+
+        <p class="w3-opacity"><i>Moving Footer</i></p>
+        <p class="w3-justify">
+          When the photos change size, the bottom footer moves which can be very annoying if you're trying to click it - Make sure that the
+          photos section stays at a fixed height, it is fine to hardcode this value
+        </p>
+
+        <p class="w3-opacity"><i>Implement Video</i></p>
+        <p class="w3-justify">
+          In the video section, it should show your webcam stream, with the colours inverted for a cool stylistic look. However, it seems
+          this hasn't been implement yet, and we are left with a box which just says "Replace me with inverted video".
+        </p>
+
+        <p class="w3-justify">Luckily for us, the API to help us with this has been finished and can be used</p>
+        <p class="w3-justify">The API at: <a href="/script/camera.js">/script/camera.js</a> contains 3 methods:</p>
+        <ul class="w3-left-align">
+          <li>CameraAPI.invertColours(stream); - This will return the stream with its colours inverted</li>
+          <li>CameraAPI.getCamera() - This will return a promise, when resolved, this will contain the stream from the webcam!</li>
+          <li>CameraAPI.setStreamToElement(htmlElement, stream) - This will replace an HTML DIV element with the rendered video</li>
+        </ul>
+        <p class="w3-justify">You should import the camera javascript and use the supplied methods to implement this feature.</p>
+      </div>
+
+      <!-- The What Next Section -->
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px" id="what-next">
+        <h2 class="w3-wide">WHATS NEXT</h2>
+        <p class="w3-justify">
+          Please delete the node_modules directory and zip up the rest of the content. Due to email security, you will have to upload this
+          zip file to a file sharing service (Google Drive, WeTransfer, Dropbox etc) and send the link. Please ensure that the link is
+          accessable and not private.
+        </p>
+
+        <p class="w3-justify">
+          Email the link to your zip to <a href="mailto:hr@awencs.com">hr@awencs.com</a> with your name and "JS Test" in the subject line.
+        </p>
+
+        <p class="w3-justify">Do not push your changes up to github as this will allow other candidates to see the answers.</p>
+      </div>
+
+      <!-- The Photos Section -->
+      <div class="w3-container w3-content w3-padding-64" style="max-width: 800px" id="photos">
+        <h2 class="w3-wide w3-center">PHOTOS</h2>
+        <div class="w3-center">
+          <div class="photos">
+            <p>First Photo</p>
+            <img src="https://www.w3schools.com/w3images/la.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width: 60%" />
+          </div>
+          <div class="photos">
+            <p>Second Photo</p>
+            <img src="https://www.w3schools.com/w3images/ny.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width: 60%" />
+          </div>
+          <div class="photos">
+            <p>Third Photo</p>
+            <img
+              src="https://www.w3schools.com/w3images/chicago.jpg"
+              class="w3-round w3-margin-bottom"
+              alt="Random Name"
+              style="width: 60%"
+            />
+          </div>
+          <div class="photos">
+            <p>Fourth Photo</p>
+            <img
+              src="https://www.w3schools.com/w3images/bandmember.jpg"
+              class="w3-round w3-margin-bottom"
+              alt="Random Name"
+              style="width: 60%"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- The Video Section -->
+      <div class="w3-container w3-content w3-padding-64" style="max-width: 800px" id="video">
+        <h2 class="w3-wide w3-center">VIDEO</h2>
+        <div class="w3-center">
+          <div id="video-element">Replace me with inverted video</div>
+        </div>
+      </div>
+
+      <!-- End Page Content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+    <script src="/script/camera.js"></script>
+    <script>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      const navigate = () => {
+        const x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") === -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      };
+
+      let currentPhoto = 0;
+      const rotatePhotos = () => {
+        const photos = document.getElementsByClassName("photos");
+        for (let i = 0; i < photos.length; i++) {
+          if (i !== currentPhoto) {
+            photos[i].style.display = "none";
+          } else {
+            photos[i].style.display = "block";
+          }
+        }
+        currentPhoto++;
+        if (currentPhoto > photos.length - 1) {
+          currentPhoto = 0;
+        }
+        setTimeout(rotatePhotos, 2000);
+      };
+      const initVideoStream = async () => {
+        try {
+          const camera = await CameraAPI.getCamera();
+          const invertColoursStream = CameraAPI.invertColours(camera);
+          const videoElement = document.getElementById("video-element");
+          CameraAPI.setStreamToElement(videoElement, invertColoursStream);
+        } catch (error) {
+          alert(error);
+        }
+      };
+      rotatePhotos();
+      initVideoStream();
+    </script>
+  </body>
+</html>
